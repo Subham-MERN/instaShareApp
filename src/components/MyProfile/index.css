@@ -1,0 +1,310 @@
+.userposts-container {
+  margin-left: 24px;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 767px) {
+  .userposts-container {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 33px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .user-text-desktop {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 32px;
+    /* identical to box height, or 100% */
+
+    color: #262626;
+  }
+}
+.user-profile-name-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  color: #262626;
+}
+@media screen and (min-width: 767px) {
+  .user-profile-name-text {
+    display: none;
+  }
+}
+
+.user-profile-top-card-mobile {
+  display: flex;
+}
+@media screen and (min-width: 767px) {
+  .user-profile-top-card-mobile {
+    display: flex;
+    align-items: center;
+  }
+}
+.user-profile-dp {
+  width: 96px;
+  height: 96px;
+  border-radius: 48px;
+  margin-right: 24px;
+}
+@media screen and (min-width: 767px) {
+  .user-profile-dp {
+    height: 180px;
+    width: 180px;
+  }
+}
+.follow-details-card {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+@media screen and (min-width: 767px) {
+  .follow-details-card {
+    display: none;
+  }
+}
+.count-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.numbers-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  color: #262626;
+}
+.value-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  color: #262626;
+}
+.user-Id-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  color: #262626;
+  margin-bottom: 0;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .user-Id-text {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .user-Id-text-desktop {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    color: #262626;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+.bio-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  /* or 171% */
+  color: #262626;
+}
+@media screen and (min-width: 768px) {
+  .bio-text {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bio-text-desktop {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    color: #262626;
+  }
+}
+
+.user-stories-container {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  .ruler2 {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+.user-profile-top-card-desktop {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .user-profile-top-card-desktop {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) {
+  .follow-details-desktop {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .count-cards-desktop {
+    margin-right: 48px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    color: #262626;
+  }
+}
+@media screen and (min-width: 768px) {
+  .numbers-text-desktop {
+    font-weight: 500;
+    margin-right: 1px;
+  }
+}
+.post-logo-card {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+@media screen and (min-width: 767px) {
+  .post-logo-card {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+.posts-txt {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  color: #262626;
+  margin-left: 7.44px;
+}
+.post-images-cards-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style-type: none;
+
+  padding: 0;
+}
+@media screen and (min-width: 767px) {
+  .post-images-cards-list {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+.no-posts-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+.bi-camera-logo-bg {
+  background-image: url('https://res.cloudinary.com/dttk0z3nc/image/upload/v1668708235/Oval_nvqlqt.png');
+  background-size: cover;
+}
+.posts-error-view-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+@media screen and (min-width: 767px) {
+  .posts-error-view-container {
+    height: 100vh;
+  }
+}
+.something-went-wrong-img {
+  height: 126.99996948242188px;
+  width: 259.99932861328125px;
+}
+@media screen and (min-width: 767px) {
+  .something-went-wrong-img {
+    height: 273.9997253417969px;
+    width: 560.0001831054688px;
+    margin-bottom: 20px;
+  }
+}
+.try-again-btn {
+  padding: 8px 24px;
+  gap: 8px;
+  width: 102px;
+  height: 32px;
+  background: #4094ef;
+  border-radius: 8px;
+  /* Inside auto layout */
+  flex-grow: 0;
+}
+@media screen and (min-width: 767px) {
+  .try-again-btn {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    width: 127px;
+    height: 48px;
+    /* Light / base / white */
+
+    color: #ffffff;
+    flex-grow: 0;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .product-failure-heading-text {
+    margin-bottom: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    /* identical to box height, or 150% */
+
+    color: #262626;
+  }
+}

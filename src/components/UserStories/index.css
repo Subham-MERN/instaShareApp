@@ -1,0 +1,13 @@
+.user-stories-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 35px;
+  margin: 4px;
+}
+.user-story-list-item {
+  height: 64px;
+  width: 64px;
+  margin-right: 12px;
+  background-image: url('https://res.cloudinary.com/dttk0z3nc/image/upload/v1668708235/Oval_nvqlqt.png');
+  background-size: cover;
+}
