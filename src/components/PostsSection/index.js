@@ -1,7 +1,6 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
-
 import PostsLibrary from '../PostsLibrary'
 import './index.css'
 
@@ -16,7 +15,6 @@ class PostsSection extends Component {
   state = {
     postsList: [],
     apiStatus: apiStatusConstants.initial,
-    isLiked: false,
   }
 
   componentDidMount() {
@@ -62,6 +60,30 @@ class PostsSection extends Component {
     }
   }
 
+  increaseLike = uid => {
+    this.setState(prevState => ({
+      postsList: prevState.postsList.map(eachItem => {
+        if (uid === eachItem.postId) {
+          const updatedLikeCount = eachItem.likesCount + 1
+          return {...eachItem, likesCount: updatedLikeCount}
+        }
+        return eachItem
+      }),
+    }))
+  }
+
+  decreaseLike = uid => {
+    this.setState(prevState => ({
+      postsList: prevState.postsList.map(eachItem => {
+        if (uid === eachItem.postId) {
+          const updatedLikeCount = eachItem.likesCount - 1
+          return {...eachItem, likesCount: updatedLikeCount}
+        }
+        return eachItem
+      }),
+    }))
+  }
+
   renderLoadingView = () => (
     <div className="loader-container">
       <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
@@ -69,7 +91,7 @@ class PostsSection extends Component {
   )
 
   renderSuccessCardView = () => {
-    const {postsList, isLiked} = this.state
+    const {postsList} = this.state
 
     return (
       <ul className="posts-card">
@@ -77,8 +99,8 @@ class PostsSection extends Component {
           <PostsLibrary
             item={each}
             key={each.postId}
-            changeLikeStatus={this.changeLikeStatus}
-            isLiked={isLiked}
+            increaseLike={this.increaseLike}
+            decreaseLike={this.decreaseLike}
           />
         ))}
       </ul>

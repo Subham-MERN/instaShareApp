@@ -1,0 +1,61 @@
+.search-error-view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.no-results-heading {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  /* identical to box height, or 150% */
+
+  text-align: center;
+
+  color: #262626;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.no-results-para {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  /* identical to box height, or 160% */
+
+  text-align: center;
+
+  color: #989898;
+}
+.search-failure-img {
+  height: 210px;
+  width: 258.0009460449219px;
+}
+@media screen and (min-width: 768px) {
+  .search-failure-img {
+    height: 409px;
+    width: 500.0003967285156px;
+  }
+}
+
+.search-title-text {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .search-title-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+    display: flex;
+    color: #262626;
+    margin-left: 200px;
+  }
+}

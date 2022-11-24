@@ -1,14 +1,13 @@
 import {Component} from 'react'
-
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {FaSearch} from 'react-icons/fa'
-import SearchResults from '../SearchResults'
+import ConfigurationContext from '../../context/ConfigurationContext'
 
 import './index.css'
 
 class Header extends Component {
-  state = {searchInput: '', showContent: false, showSearchtab: false}
+  state = {showContent: false, showSearchtab: false}
 
   onClickLogout = () => {
     const {history} = this.props
@@ -21,10 +20,6 @@ class Header extends Component {
     this.setState({showSearchtab: false})
   }
 
-  changeSearchInput = event => {
-    this.setState({searchInput: event.target.value})
-  }
-
   showSearchBar = () => {
     this.setState(prevState => ({
       showContent: !prevState.showContent,
@@ -32,16 +27,8 @@ class Header extends Component {
     }))
   }
 
-  onClickSearchInput = event => {
-    event.preventDefault()
-    const {searchInput, showSearchtab} = this.state
-    return (
-      <SearchResults searchInput={searchInput} showSearchtab={showSearchtab} />
-    )
-  }
-
   render() {
-    const {showContent, searchInput, showSearchtab} = this.state
+    const {showContent, showSearchtab} = this.state
     return (
       <>
         <nav className="nav-header">
@@ -57,21 +44,40 @@ class Header extends Component {
           </div>
           <ul className="nav-item-desktop-container">
             <li>
-              <form
-                className="search-container"
-                onSubmit={this.onClickSearchInput}
-              >
-                <input
-                  type="search"
-                  className="search-input"
-                  value={searchInput}
-                  placeholder="Search Caption"
-                  onChange={this.changeSearchInput}
-                />
-                <button type="submit" className="search-desktop-btn">
-                  <FaSearch />
-                </button>
-              </form>
+              <ConfigurationContext.Consumer>
+                {value => {
+                  const {
+                    searchInput,
+                    changeSearchValue,
+                    onClickChangeSearchStatus,
+                  } = value
+                  const onchangeSearchInput = event => {
+                    changeSearchValue(event.target.value)
+                  }
+                  const onSubmitChangeStatus = event => {
+                    event.preventDefault()
+                    onClickChangeSearchStatus()
+                  }
+
+                  return (
+                    <form
+                      className="search-container"
+                      onSubmit={onSubmitChangeStatus}
+                    >
+                      <input
+                        type="search"
+                        className="search-input"
+                        value={searchInput}
+                        placeholder="Search Caption"
+                        onChange={onchangeSearchInput}
+                      />
+                      <button type="submit" className="search-desktop-btn">
+                        <FaSearch />
+                      </button>
+                    </form>
+                  )
+                }}
+              </ConfigurationContext.Consumer>
             </li>
 
             <Link className="link-mod home-link-text" to="/">
@@ -106,21 +112,40 @@ class Header extends Component {
         </nav>
         {showSearchtab ? (
           <div className="searchBarTogglecontainer">
-            <form
-              className="search-container"
-              onSubmit={this.onClickSearchInput}
-            >
-              <input
-                type="search"
-                className="search-input"
-                value={searchInput}
-                placeholder="Search Caption"
-                onChange={this.changeSearchInput}
-              />
-              <button type="submit" className="search-desktop-btn">
-                <FaSearch />
-              </button>
-            </form>
+            <ConfigurationContext.Consumer>
+              {value => {
+                const {
+                  searchInput,
+                  changeSearchValue,
+                  onClickChangeSearchStatus,
+                } = value
+                const onchangeSearchInput = event => {
+                  changeSearchValue(event.target.value)
+                }
+                const onSubmitChangeStatus = event => {
+                  event.preventDefault()
+                  onClickChangeSearchStatus()
+                }
+
+                return (
+                  <form
+                    className="search-container"
+                    onSubmit={onSubmitChangeStatus}
+                  >
+                    <input
+                      type="search"
+                      className="search-input"
+                      value={searchInput}
+                      placeholder="Search Caption"
+                      onChange={onchangeSearchInput}
+                    />
+                    <button type="submit" className="search-desktop-btn">
+                      <FaSearch />
+                    </button>
+                  </form>
+                )
+              }}
+            </ConfigurationContext.Consumer>
           </div>
         ) : null}
         {showContent ? (

@@ -139,7 +139,7 @@ class UserProfile extends Component {
             <ul className="follow-details-card">
               <li className="count-cards">
                 <span className="numbers-text">{postsCount}</span>
-                <h1 className="value-text">Posts</h1>
+                <span className="value-text">Posts</span>
               </li>
               <li className="count-cards">
                 <span className="numbers-text">{followersCount}</span>

@@ -41,7 +41,7 @@ class ReactSlick extends Component {
     return (
       <Slider {...settings}>
         {items.map(each => {
-          const {id, storyUrl, userName} = each
+          const {id, storyUrl} = each
           return (
             <div className="slick-item" key={id}>
               <img className="logo-image" src={storyUrl} alt="logo" />

@@ -11,7 +11,7 @@ const CommentsSection = props => {
   return (
     <li className="comment-list-item user-text">
       <span className="user-comment-text">{userName}</span>
-      {comment}
+      <p className="cmment-text-para">{comment}</p>
     </li>
   )
 }

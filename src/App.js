@@ -11,19 +11,34 @@ import ConfigurationContext from './context/ConfigurationContext'
 import './App.css'
 
 class App extends Component {
-  state = {showSearchResults: false}
+  state = {searchInput: '', searchActive: false}
 
-  onToggleShowContent = () => {
-    this.setState({showSearchResults: true})
+  changeSearchValue = value => {
+    this.setState({searchInput: value})
+  }
+
+  onClickChangeSearchStatus = () => {
+    const {searchInput} = this.state
+
+    if (searchInput !== '') {
+      this.setState(prevState => ({
+        searchActive: !prevState.searchActive,
+      }))
+    } else {
+      this.setState({searchActive: false})
+    }
   }
 
   render() {
-    const {showSearchResults} = this.state
+    const {searchInput, searchActive} = this.state
+
     return (
       <ConfigurationContext.Provider
         value={{
-          showSearchResults,
-          onToggleShowContent: this.onToggleShowContent,
+          searchInput,
+          searchActive,
+          changeSearchValue: this.changeSearchValue,
+          onClickChangeSearchStatus: this.onClickChangeSearchStatus,
         }}
       >
         <Switch>

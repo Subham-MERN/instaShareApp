@@ -1,9 +1,10 @@
 import React from 'react'
 
 const ConfigurationContext = React.createContext({
-  showSearchResults: false,
-
-  onToggleShowContent: () => {},
+  searchInput: '',
+  searchActive: false,
+  changeSearchValue: () => {},
+  onClickChangeSearchStatus: () => {},
 })
 
 export default ConfigurationContext
