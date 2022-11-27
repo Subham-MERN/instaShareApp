@@ -71,7 +71,11 @@ class Header extends Component {
                         placeholder="Search Caption"
                         onChange={onchangeSearchInput}
                       />
-                      <button type="submit" className="search-desktop-btn">
+                      <button
+                        type="submit"
+                        className="search-desktop-btn"
+                        testid="searchIcon"
+                      >
                         <FaSearch />
                       </button>
                     </form>
@@ -139,7 +143,11 @@ class Header extends Component {
                       placeholder="Search Caption"
                       onChange={onchangeSearchInput}
                     />
-                    <button type="submit" className="search-desktop-btn">
+                    <button
+                      type="submit"
+                      className="search-desktop-btn"
+                      testid="searchIcon"
+                    >
                       <FaSearch />
                     </button>
                   </form>

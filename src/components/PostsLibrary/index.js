@@ -99,6 +99,7 @@ class PostsLibrary extends Component {
             {isLiked ? (
               <button
                 type="button"
+                testid="unLikeIcon"
                 className="post-list-btns"
                 onClick={this.changeUnLikeBtn}
               >
@@ -107,6 +108,7 @@ class PostsLibrary extends Component {
             ) : (
               <button
                 type="button"
+                testid="likeIcon"
                 className="post-list-btns"
                 onClick={this.changeLikeBtn}
               >
